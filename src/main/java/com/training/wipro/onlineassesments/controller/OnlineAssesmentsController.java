@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.training.wipro.onlineassesments.entity.Users;
+import com.training.wipro.onlineassesments.model.AssementsScoreVO;
+import com.training.wipro.onlineassesments.model.AssesmentsVo;
 import com.training.wipro.onlineassesments.model.LoginVo;
 import com.training.wipro.onlineassesments.model.UserDetails;
+import com.training.wipro.onlineassesments.service.AssessmentsService;
 import com.training.wipro.onlineassesments.service.UserService;
 
 @Controller
 public class OnlineAssesmentsController {
 	@Autowired private UserService userService;
+	@Autowired private AssessmentsService assessmentsService;
 	@PostMapping("/login")
 	public String login(@ModelAttribute LoginVo loginVo) {
 		System.out.println(loginVo);
@@ -50,6 +54,21 @@ public class OnlineAssesmentsController {
 	public String newUser() {
 		
 		return "adduser";
+	}
+	
+	@GetMapping("/springassessment")
+	public String springAssessMent(@ModelAttribute AssesmentsVo assesmentsVo,Model model) {
+		
+		return "springassessment";
+	}
+	
+	@PostMapping("/submitassessment")
+	public String submitassessment(@ModelAttribute AssesmentsVo assesmentsVo,Model model) {
+		System.out.println(assesmentsVo);
+		AssementsScoreVO assementsScoreVO=assessmentsService.calcScore(assesmentsVo);
+		
+		System.out.println(assementsScoreVO);
+		return "springassessment";
 	}
 
 }
