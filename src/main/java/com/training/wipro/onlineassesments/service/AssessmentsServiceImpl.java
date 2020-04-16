@@ -25,7 +25,7 @@ public class AssessmentsServiceImpl implements AssessmentsService {
 			long result = ansList.stream().filter(ans -> {
 				return this.isValidAnswer(ans.getQuestionId(),
 						ans.getAnswer(), assesmentsVo);
-			}).mapToInt(ans -> 10).count();
+			}).mapToInt(ans -> 10).sum();
 			assementsScoreVO.setMarksAcquired(result);
 			assementsScoreVO.setPassMarks(30);
 			assementsScoreVO.setTotalMarks(ansList.size());

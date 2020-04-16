@@ -1,6 +1,6 @@
 
-insert into USERS values('roger@gmail.com','wipro@123','Roger','Kutcher','admin');
-insert into USERS values('steve@gmail.com','wipro@123','Steve','Martin','admin');
+insert into USERS (EMAIL_ID, password, FIRST_NAME, LAST_NAME,USER_TYPE) values('roger@gmail.com','wipro@123','Roger','Kutcher','admin');
+insert into USERS (EMAIL_ID, password, FIRST_NAME, LAST_NAME,USER_TYPE)  values('steve@gmail.com','wipro@123','Steve','Martin','admin');
 insert into ASSESMENTS values('Spring Assessment',30);
 insert into ASSESMENTS values('Hibernate Assessment',30);
 insert into ASSESMENTS_ANSWERS (id, question_id, answer, assessment_name) values(1,'Question1','J2EE App Development Framework','Spring Assessment');
