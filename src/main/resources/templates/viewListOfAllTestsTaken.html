@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>List Of Candidates</title>
+</head>
+<body>
+	<div style="background-color: cyan; width: 55%; align: center;">
+		<h1>List of Candidates and Tests</h1>
+		<table border="1|0">
+			<thead>
+				<tr>
+					<th>Test Date</th>
+					<th>Assessment</th>
+					<th>Test Marks</th>
+					<th>Email ID</th>
+					<th>Total Marks</th>
+					<th>Result</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="userResults, stat : ${listOfAllTestsTaken}">
+					<td><span th:text="${userResults.getTestDate()}">Test Date</span></td>
+					<td><span th:text="${userResults.getAssessment()}">Assessment</span></td>
+					<td><span th:text="${userResults.getTestMarks()}">Test Marks</span></td>
+					<td><span th:text="${userResults.getEmailId()}">Email ID</span></td>
+					<td><span th:text="${userResults.getTotalMarks()}">Total Marks</span></td>
+					<td><span th:text="${userResults.getResult()}">Result</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<br>
+	<a href="/OnlineAssessment/admindashboard">Go Back</a>
+	
+</body>
+</html>

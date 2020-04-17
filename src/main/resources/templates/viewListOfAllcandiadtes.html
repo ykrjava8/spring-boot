@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>List Of Candidates</title>
+</head>
+
+<body>
+	<div style="background-color: cyan; width: 40%; align: center;">
+	
+		<h1>List of All Users</h1>
+	
+		<table border="1|0">
+	
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email ID</th>
+					<th>User Type</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="candidate, stat : ${listOfUsers}">
+
+					<td><span th:text="${candidate.getFirstName()}">First Name</span></td>
+					<td><span th:text="${candidate.getLastName()}">Last Name</span></td>
+					<td><span th:text="${candidate.getEmailId()}">Email ID</span></td>
+					<td><span th:text="${candidate.getUserType()}">User Type</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<br>
+	<br>
+	
+	<a href="/OnlineAssessment/admindashboard">Go Back</a>
+	
+</body>
+</html>

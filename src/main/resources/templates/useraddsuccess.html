@@ -5,8 +5,13 @@
 <title>Registration Confirmation</title>
 </head>
 <body>
-Registered Successfully!!!
-${{name}}
-<a href="/OnlineAssessment">LOGIN</a>
+	<div
+		style="background-color: Orange; width: 40%; height: 40%; align: center;">
+		<h2>Registered Successfully!!!</h2>
+		<h3>
+			<p th:text="${name}" />
+		</h3>
+		<a href="/OnlineAssessment">LOGIN</a>
+	</div>
 </body>
 </html>
